@@ -1,0 +1,35 @@
+# Feast Configuration - LOCAL BACKEND (SQLite)
+# This is for local development and testing
+# For GCP, replace with the BigQuery configuration at the end
+
+project: iris_feature_store
+registry: data/registry.db
+provider: local
+
+offline_store:
+  type: file
+
+online_store:
+  type: sqlite
+  path: data/online_store.db
+
+---
+# ============================================
+# ALTERNATIVE: GCP BIGQUERY BACKEND
+# ============================================
+# Uncomment below and update your GCP project details
+# for production use in GCP
+
+# project: iris_feature_store
+# registry: gs://YOUR_BUCKET_NAME/registry.db
+# provider: gcp
+#
+# offline_store:
+#   type: bigquery
+#   project: YOUR_GCP_PROJECT_ID
+#   dataset: iris_features
+#   
+# online_store:
+#   type: bigquery
+#   project: YOUR_GCP_PROJECT_ID
+#   dataset: iris_online_features

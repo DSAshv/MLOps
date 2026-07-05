@@ -1,0 +1,12 @@
+# Ignore everything by default and only track the minimal repo files
+*
+!.gitignore
+!feature_store.yaml
+!features.py
+!README.md
+
+# Ignore generated runtime artifacts
+data/
+__pycache__/
+.ipynb_checkpoints/
+.venv/
